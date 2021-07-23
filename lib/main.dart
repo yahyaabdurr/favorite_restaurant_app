@@ -11,6 +11,7 @@ import 'package:favorite_restaurant_app/provider/settings_provider.dart';
 import 'package:favorite_restaurant_app/ui/home_page.dart';
 import 'package:favorite_restaurant_app/ui/restaurant_detail_page.dart';
 import 'package:favorite_restaurant_app/ui/search_page.dart';
+import 'package:favorite_restaurant_app/ui/splash_screen_page.dart';
 import 'package:favorite_restaurant_app/utils/background_service.dart';
 import 'package:favorite_restaurant_app/utils/notification_helper.dart';
 import 'package:flutter/material.dart';
@@ -56,8 +57,9 @@ class MyApp extends StatelessWidget {
             theme:
                 Provider.of<SettingsProvider>(context, listen: false).themeData,
             navigatorKey: navigatorKey,
-            initialRoute: HomePage.routeName,
+            initialRoute: SplashScreenPage.routeName,
             routes: {
+              SplashScreenPage.routeName: (context) => SplashScreenPage(),
               HomePage.routeName: (context) => HomePage(),
               RestaurantDetailPage.routeName: (context) => RestaurantDetailPage(
                   id: ModalRoute.of(context)?.settings.arguments as String),
